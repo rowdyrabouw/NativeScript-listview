@@ -1,0 +1,18 @@
+<ActionBar title="Listview" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <StackLayout>
+                <GridLayout columns="* 25" orientation="horizontal" (tap)="item.isVisible = !item.isVisible">
+                    <Label [text]="item.title" class="list-group-item"></Label>
+                    <Label col="1" [text]="'fa-chevron-down' | fonticon" visibility="{{!item.isVisible ? 'visible' : 'collapsed'}}" class="fa" verticalAlignment="center"></Label>
+                    <Label col="1" [text]="'fa-chevron-up' | fonticon" visibility="{{item.isVisible ? 'visible' : 'collapsed'}}" class="fa" verticalAlignment="center"></Label>
+                </GridLayout>
+                <StackLayout>
+                    <Label [text]="item.text" textWrap="true" visibility="{{item.isVisible ? 'visible' : 'collapsed'}}" class="list-group-item"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
