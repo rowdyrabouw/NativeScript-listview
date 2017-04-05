@@ -1,1 +1,1 @@
-![screenshot](app/images/listview.gif)
+![screenshot](app/assets/images/listview.gif)
